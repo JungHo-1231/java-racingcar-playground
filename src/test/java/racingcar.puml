@@ -1,6 +1,8 @@
 @startuml
-object "gameUI" as gi
+object "CarRacing" as gi
+object "Cars" as cs
 object "Car" as c
 
-gi -right-> c
+gi -right-> cs
+cs -right-> c :move()
 @enduml

@@ -1,28 +1,27 @@
 package racingcar.test;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.domain.GameManager;
+import racingcar.domain.RacingGame;
 import racingcar.domain.car.Car;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class GameManagerTest {
+public class RacingGameTest {
 
     public static final String CAR_NAMES = "pobi,crong,honux";
-    GameManager gameManager;
+    RacingGame racingGame;
     private int count;
 
     @BeforeEach
     void setUp() {
         count = 10;
 
-        gameManager = new GameManager(CAR_NAMES);
-        gameManager.setGameCount(count);
+        racingGame = new RacingGame(CAR_NAMES);
+        racingGame.setGameCount(count);
     }
 
     @Test
@@ -31,7 +30,7 @@ public class GameManagerTest {
         //given
         //when
         //then
-        List<String> carNamesFromGame = gameManager.getCarNames();
+        List<String> carNamesFromGame = racingGame.getCarNames();
 
         assertThat(carNamesFromGame).contains("pobi");
         assertThat(carNamesFromGame).contains("crong");
@@ -44,7 +43,7 @@ public class GameManagerTest {
     void GameManager_시도할_횟수_테스트() throws Exception {
         //given 
         //when
-        int gameCount = gameManager.getGameCount();
+        int gameCount = racingGame.getGameCount();
         //then
         assertThat(gameCount).isEqualTo(count);
     }
@@ -54,7 +53,7 @@ public class GameManagerTest {
     void GameManager_게임_시작_테스트() throws Exception {
         //given
         //when
-        List<Car> winner = gameManager.play();
+        List<Car> winner = racingGame.play();
         //then
 
         StringBuilder sb = new StringBuilder();

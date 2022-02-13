@@ -4,11 +4,11 @@ import racingcar.domain.car.Car;
 
 import java.util.List;
 
-public class GameManager {
+public class RacingGame {
     private Cars cars;
     private int gameCount;
 
-    public GameManager(String carNames) {
+    public RacingGame(String carNames) {
         cars = new Cars(carNames);
     }
 
