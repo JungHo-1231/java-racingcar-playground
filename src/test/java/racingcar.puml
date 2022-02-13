@@ -1,0 +1,6 @@
+@startuml
+object "gameUI" as gi
+object "Car" as c
+
+gi -right-> c
+@enduml
