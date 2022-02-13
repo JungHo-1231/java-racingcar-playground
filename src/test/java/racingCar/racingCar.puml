@@ -1,0 +1,8 @@
+@startuml
+object "CarRacing" as cr 
+object "Cars" as cs
+object "Car" as c
+
+cr -right-> cs
+cs -right-> c :move() \n 1:*
+@enduml
